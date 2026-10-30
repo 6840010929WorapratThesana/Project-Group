@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ก๋วยเตี๋ยวซิ่ง - สด เร็ว แรง แซ่บถึงใจ</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <i class="fa-solid fa-bolt me-2"></i>ก๋วยเตี๋ยวซิ่ง
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">หน้าหลัก</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">จุดเด่น</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">เมนูสั่งซิ่ง</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อเรา</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link btn btn-racing-outline px-3 py-1" href="about.html">
+              <i class="fa-solid fa-users me-1"></i> ทีมงานผู้พัฒนา
+            </a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <button class="btn btn-racing-primary position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <span class="racing-badge"><i class="fa-solid fa-fire me-1"></i> สปีดความอร่อย 24/7</span>
+          <h1 class="hero-title mb-2">ก๋วยเตี๋ยวเรือซิ่ง</h1>
+          <div class="hero-subtitle mb-3">เข้มข้น จัดจ้าน สั่งปุ๊บ บึ่งส่งปั๊บ!</div>
+          <p class="text-secondary fs-5 mb-4">
+            จัดเต็มความอร่อยด้วยซุปเด็ด 4 สูตร (น้ำตก, น้ำใส, ต้มยำ, เย็นตาโฟ) 
+            เลือกจับคู่กับ 5 เส้นยอดฮิต พร้อมระบบจัดส่งด่วนติดเทอร์โบถึงหน้าบ้านคุณ
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#menu" class="btn btn-racing-primary btn-lg">
+              <i class="fa-solid fa-utensils me-2"></i>สั่งก๋วยเตี๋ยวซิ่ง
+            </a>
+            <a href="menu.pdf" download="menu.pdf" class="btn btn-racing-outline btn-lg">
+            <i class="fa-solid fa-file-pdf me-2"></i>ดาวน์โหลดเมนู (PDF)
+         </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="position-relative">
+            <svg class="img-fluid rounded-4 shadow-lg" width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="350" rx="20" fill="#1E1E1E"/>
+              <path d="M 50 260 Q 250 320 450 260 L 410 210 L 90 210 Z" fill="#8B4513" stroke="#FFB703" stroke-width="4"/>
+              <path d="M 380 200 L 480 150 L 380 170 Z" fill="#E63946"/>
+              <circle cx="250" cy="170" r="70" fill="#E63946"/>
+              <circle cx="250" cy="170" r="55" fill="#3D0000"/>
+              <path d="M 210 170 Q 250 140 290 170" stroke="#FFB703" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <circle cx="230" cy="160" r="8" fill="#FFF"/>
+              <circle cx="270" cy="160" r="8" fill="#FFF"/>
+              <path d="M 180 100 Q 170 60 190 30" stroke="#FF5722" stroke-width="4" fill="none" opacity="0.7"/>
+              <path d="M 250 90 Q 240 50 260 20" stroke="#FF5722" stroke-width="4" fill="none" opacity="0.8"/>
+              <path d="M 320 100 Q 310 60 330 30" stroke="#FF5722" stroke-width="4" fill="none" opacity="0.7"/>
+              <text x="250" y="320" font-family="Kanit" font-size="22" font-weight="bold" fill="#FFB703" text-anchor="middle">
+                🏎️ เรือซิ่งสายตรงความอร่อย 🍜
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="racing-badge">WHY CHOOSE US</span>
+        <h2 class="fw-bold fs-1">จุดเด่นความแรงของ <span class="text-warning">ก๋วยเตี๋ยวซิ่ง</span></h2>
+        <p class="text-secondary">ทำไมสายกินถึงต้องเลือกสั่งก๋วยเตี๋ยวเรือกับเรา</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-12">
+          <div class="feature-card text-center">
+            <div class="feature-icon text-danger">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">จัดส่งด่วนติดเทอร์โบ</h3>
+            <p class="text-secondary mb-0">
+              ระบบอัลกอริทึมกระจายออเดอร์ให้เรือซิ่งเดลิเวอรี่ที่ใกล้คุณที่สุด ปรับเส้นทางหลบรถติด ส่งร้อนถึงมือภายใน 15 นาที!
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="feature-card text-center">
+            <div class="feature-icon text-warning">
+              <i class="fa-solid fa-bowl-food"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">4 น้ำซุป 5 เส้น มิกซ์ได้ตามใจ</h3>
+            <p class="text-secondary mb-0">
+              ไม่ว่าจะซุปน้ำตกเข้มข้น น้ำใสเช็งๆ ต้มยำแซ่บจี๊ด หรือเย็นตาโฟทรงเครื่อง ปรับแมตช์กับเส้นโปรดได้ตามสไตล์คุณ
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="feature-card text-center">
+            <div class="feature-icon text-success">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">ชามเกราะกันความเย็น</h3>
+            <p class="text-secondary mb-0">
+              แพ็กเกจจิ้งนวัตกรรมแยกเส้น น้ำ และเครื่องปรุงในชามฉนวนความร้อน คงความร้อนฉ่าและความสดใหม่เหมือนกินที่ท่าเรือ
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="py-5 bg-dark border-top border-bottom border-secondary">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="racing-badge bg-warning text-dark">CUSTOM MENU & PRICES</span>
+        <h2 class="fw-bold fs-1">สั่งก๋วยเตี๋ยวซิ่ง & เครื่องเคียงในสไตล์คุณ</h2>
+        <p class="text-secondary">เลือกเมนูก๋วยเตี๋ยวซิ่ง เครื่องเคียงทานเล่น และขนมถ้วย แล้วใส่ตะกร้าได้ทันที</p>
+      </div>
+
+      <div class="row g-4 justify-content-center mb-5">
+        <div class="col-md-6 col-lg-6">
+          <div class="menu-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h3 class="h5 fw-bold text-light mb-0">ชุดหมูซิ่งจัดเต็ม</h3>
+                <span class="badge bg-danger fs-6">฿55</span>
+              </div>
+              <p class="text-secondary small mb-3">หมูนุ่ม ตับสด ลูกชิ้นหมูแท้ และผักบุ้งกวางตุ้งกรอบ</p>
+              
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label text-warning small fw-bold mb-1"><i class="fa-solid fa-fill-drip me-1"></i>น้ำซุป:</label>
+                  <select class="form-select form-select-sm bg-dark text-light border-secondary" id="soupSelect1">
+                    <option value="น้ำตก">น้ำตกเข้มข้น</option>
+                    <option value="น้ำใส">น้ำใสเช็งๆ</option>
+                    <option value="ต้มยำ">ต้มยำแซ่บจี๊ด</option>
+                    <option value="เย็นตาโฟ">เย็นตาโฟทรงเครื่อง</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label class="form-label text-warning small fw-bold mb-1"><i class="fa-solid fa-wheat-awn me-1"></i>เส้น:</label>
+                  <select class="form-select form-select-sm bg-dark text-light border-secondary" id="noodleSelect1">
+                    <option value="เส้นเล็ก">เส้นเล็ก</option>
+                    <option value="เส้นใหญ่">เส้นใหญ่</option>
+                    <option value="หมี่เหลือง">หมี่เหลือง</option>
+                    <option value="เส้นหมี่ (หมี่ขาว)">เส้นหมี่ (หมี่ขาว)</option>
+                    <option value="เส้นมาม่า">เส้นมาม่า</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-top border-secondary">
+              <button class="btn btn-racing-primary w-100" onclick="addCustomToCart('ชุดหมูซิ่งจัดเต็ม', 55, 'soupSelect1', 'noodleSelect1')">
+                <i class="fa-solid fa-plus me-1"></i>สั่งชามนี้ (฿55)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+          <div class="menu-card h-100 p-4 d-flex flex-column justify-content-between border-warning">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h3 class="h5 fw-bold text-light mb-0">ชุดเนื้อริบอายเทอร์โบ</h3>
+                <span class="badge bg-warning text-dark fs-6">฿89</span>
+              </div>
+              <p class="text-secondary small mb-3">เนื้อริบอายสไลซ์บางนุ่มละลายในปาก และลูกชิ้นเนื้อพรีเมียม</p>
+
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label text-warning small fw-bold mb-1"><i class="fa-solid fa-fill-drip me-1"></i>น้ำซุป:</label>
+                  <select class="form-select form-select-sm bg-dark text-light border-secondary" id="soupSelect2">
+                    <option value="น้ำตก">น้ำตกเข้มข้น</option>
+                    <option value="น้ำใส">น้ำใสเช็งๆ</option>
+                    <option value="ต้มยำ">ต้มยำแซ่บจี๊ด</option>
+                    <option value="เย็นตาโฟ">เย็นตาโฟทรงเครื่อง</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label class="form-label text-warning small fw-bold mb-1"><i class="fa-solid fa-wheat-awn me-1"></i>เส้น:</label>
+                  <select class="form-select form-select-sm bg-dark text-light border-secondary" id="noodleSelect2">
+                    <option value="เส้นเล็ก">เส้นเล็ก</option>
+                    <option value="เส้นใหญ่">เส้นใหญ่</option>
+                    <option value="หมี่เหลือง">หมี่เหลือง</option>
+                    <option value="เส้นหมี่ (หมี่ขาว)">เส้นหมี่ (หมี่ขาว)</option>
+                    <option value="เส้นมาม่า">เส้นมาม่า</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-top border-secondary">
+              <button class="btn btn-racing-primary w-100" onclick="addCustomToCart('ชุดเนื้อริบอายเทอร์โบ', 89, 'soupSelect2', 'noodleSelect2')">
+                <i class="fa-solid fa-plus me-1"></i>สั่งชามนี้ (฿89)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mb-4">
+        <h3 class="h4 fw-bold text-warning"><i class="fa-solid fa-bowl-rice me-2"></i>เครื่องเคียงซิ่ง & ขนมหวาน (ถุง/ถ้วยละ 10 บาท)</h3>
+        <p class="text-secondary small">เพิ่มความฟิน ทานคู่กับก๋วยเตี๋ยวเรือซิ่ง</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-2-4">
+          <div class="menu-card p-3 text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-3 mb-2">🥓</div>
+              <h4 class="h6 fw-bold text-light mb-1">แคบหมูซิ่ง</h4>
+              <p class="text-warning fw-bold mb-2">฿10 <small class="text-secondary fw-normal">/ถุง</small></p>
+            </div>
+            <button class="btn btn-sm btn-racing-primary w-100" onclick="addSideToCart('แคบหมูซิ่ง', 10)">+ สั่งซื้อ</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2-4">
+          <div class="menu-card p-3 text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-3 mb-2">🥩</div>
+              <h4 class="h6 fw-bold text-light mb-1">แคบวัวกรอบ</h4>
+              <p class="text-warning fw-bold mb-2">฿10 <small class="text-secondary fw-normal">/ถุง</small></p>
+            </div>
+            <button class="btn btn-sm btn-racing-primary w-100" onclick="addSideToCart('แคบวัวกรอบ', 10)">+ สั่งซื้อ</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2-4">
+          <div class="menu-card p-3 text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-3 mb-2">🥟</div>
+              <h4 class="h6 fw-bold text-light mb-1">เกี๊ยวกรอบ</h4>
+              <p class="text-warning fw-bold mb-2">฿10 <small class="text-secondary fw-normal">/ถุง</small></p>
+            </div>
+            <button class="btn btn-sm btn-racing-primary w-100" onclick="addSideToCart('เกี๊ยวกรอบ', 10)">+ สั่งซื้อ</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2-4">
+          <div class="menu-card p-3 text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-3 mb-2">🧄</div>
+              <h4 class="h6 fw-bold text-light mb-1">กากเจียวซิ่ง</h4>
+              <p class="text-warning fw-bold mb-2">฿10 <small class="text-secondary fw-normal">/ถุง</small></p>
+            </div>
+            <button class="btn btn-sm btn-racing-primary w-100" onclick="addSideToCart('กากเจียวซิ่ง', 10)">+ สั่งซื้อ</button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2-4">
+          <div class="menu-card p-3 text-center h-100 d-flex flex-column justify-content-between border-warning">
+            <div>
+              <div class="fs-3 mb-2">🥥</div>
+              <h4 class="h6 fw-bold text-light mb-1">ขนมถ้วยโบราณ</h4>
+              <p class="text-warning fw-bold mb-2">฿10 <small class="text-secondary fw-normal">/ถ้วย</small></p>
+            </div>
+            <button class="btn btn-sm btn-racing-primary w-100" onclick="addSideToCart('ขนมถ้วยโบราณ', 10)">+ สั่งซื้อ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-5">
+          <span class="racing-badge">ทักมาหาเราได้เลย</span>
+          <h2 class="fw-bold display-6 mb-2">อยากทานอะไรดี?<br><span class="text-warning">คุยกับ ก๋วยเตี๋ยวซิ่ง</span></h2>
+          <p class="text-secondary mb-0">สอบถามเมนูหรือสั่งเครื่องดื่มและก๋วยเตี๋ยวได้ทางช่องทางของร้าน</p>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="contact-card p-3 d-flex align-items-center h-100">
+                <div class="contact-icon-box bg-success-subtle text-success rounded-3 p-3 me-3 fs-4">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-1">โทรศัพท์</h4>
+                  <p class="text-secondary small mb-0">092-xxx-xxxx</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="contact-card p-3 d-flex align-items-center h-100">
+                <div class="contact-icon-box bg-success text-white rounded-3 p-3 me-3 fs-4">
+                  <i class="fa-brands fa-line"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-1">LINE Official</h4>
+                  <p class="text-secondary small mb-0">@guaytiew_zing (ตัวอย่าง)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="contact-card p-3 d-flex align-items-center h-100">
+                <div class="contact-icon-box bg-danger-subtle text-danger rounded-3 p-3 me-3 fs-4">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-1">Instagram</h4>
+                  <p class="text-secondary small mb-0">Guay Tiew Zing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="contact-card p-3 d-flex align-items-center h-100">
+                <div class="contact-icon-box bg-primary text-white rounded-3 p-3 me-3 fs-4">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold text-light mb-1">Facebook</h4>
+                  <p class="text-secondary small mb-0">ก๋วยเตี๋ยวซิ่ง - Guay Tiew Zing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row align-items-center justify-content-between text-center text-md-start g-3">
+        <div class="col-md-4">
+          <a class="text-decoration-none fw-bold fs-5 text-warning" href="#home">
+            <i class="fa-solid fa-bolt me-1"></i>ก๋วยเตี๋ยวซิ่ง
+          </a>
+        </div>
+        <div class="col-md-4 text-center text-secondary small">
+          <p class="mb-0">Freshly raced, naturally delicious. 🏎️🍜</p>
+        </div>
+        <div class="col-md-4 text-md-end text-secondary small">
+          <p class="mb-0">© 2026 ก๋วยเตี๋ยวซิ่ง</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-3 opacity-25">
+
+      <div class="text-center text-secondary small">
+        <p class="mb-0">
+          โครงการนี้เป็นส่วนหนึ่งของวิชาFull Stack Wed DEVELOPMENT สถาบันการจัดการปัญญาภิวัฒน์ (PIM) <br>
+          <a href="https://www.pim.ac.th" target="_blank" class="text-warning text-decoration-none fw-bold">
+            <i class="fa-solid fa-graduation-cap me-1"></i>เข้าสู่เว็บไซต์ PIM (pim.ac.th)
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-danger">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-cart-shopping me-2"></i>ตะกร้าสินค้าซิ่ง</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cartItemsList" class="mb-3">
+            <p class="text-secondary text-center my-3">ยังไม่มีรายการในตะกร้า</p>
+          </div>
+          <div class="d-flex justify-content-between fw-bold fs-5 pt-2 border-top border-secondary">
+            <span>ราคารวมทั้งหมด:</span>
+            <span id="cartTotalPrice" class="text-warning">฿0</span>
+          </div>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+          <button type="button" class="btn btn-racing-primary" onclick="checkout()">ยืนยันการสั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
