@@ -30,16 +30,15 @@
       <div class="text-center mb-5">
         <span class="racing-badge bg-warning text-dark">CHECKOUT & DELIVERY</span>
         <h1 class="fw-bold fs-1 mt-2">ยืนยันคำสั่งซื้อ & ที่อยู่จัดส่ง</h1>
-        <p class="text-secondary">กรอกข้อมูลสำหรับให้เรือซิ่งเดลิเวอรี่จัดส่งความอร่อยถึงหน้าบ้านคุณ</p>
+        <p class="text-secondary">กรอกข้อมูลและชำระเงินเพื่อให้เรือซิ่งเดลิเวอรี่จัดส่งความอร่อยถึงหน้าบ้านคุณ</p>
       </div>
 
       <div class="row g-5 justify-content-center">
-        <!-- ฟอร์มกรอกที่อยู่และชำระเงิน -->
         <div class="col-lg-8">
           <div class="menu-card p-4 rounded-4 border-secondary">
             <h3 class="h5 fw-bold text-light mb-4"><i class="fa-solid fa-address-book text-warning me-2"></i>ข้อมูลการจัดส่ง</h3>
             
-            <form onsubmit="event.preventDefault(); alert('สั่งซื้อสำเร็จ! เรือซิ่งกำลังออกเดินทาง 🛵💨'); window.location.href='index.html';">
+            <form onsubmit="event.preventDefault(); alert('ชำระเงินและสั่งซื้อสำเร็จ! เรือซิ่งกำลังออกเดินทาง 🛵💨'); window.location.href='index.html';">
               <div class="row g-3 mb-4">
                 <div class="col-md-6">
                   <label class="form-label text-secondary small">ชื่อ-นามสกุลผู้รับ</label>
@@ -66,15 +65,29 @@
               <h3 class="h5 fw-bold text-light mb-3 pt-3 border-top border-secondary"><i class="fa-solid fa-wallet text-warning me-2"></i>วิธีชำระเงิน</h3>
               
               <div class="mb-4">
+                <!-- ตัวเลือก QR PromptPay -->
                 <div class="form-check mb-2 p-3 bg-dark border border-secondary rounded-3">
-                  <input class="form-check-input" type="radio" name="paymentMethod" id="qrPromptPay" checked>
-                  <label class="form-check-label text-light fw-bold w-100" for="qrPromptPay">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="qrPromptPay" checked onclick="togglePayment(true)">
+                  <label class="form-check-label text-light fw-bold w-100" for="qrPromptPay" style="cursor: pointer;">
                     <i class="fa-solid fa-qrcode text-warning me-2"></i> สแกนจ่ายผ่าน QR PromptPay (สปีดโอนไว)
                   </label>
                 </div>
-                <div class="form-check p-3 bg-dark border border-secondary rounded-3">
-                  <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery">
-                  <label class="form-check-label text-light fw-bold w-100" for="cashOnDelivery">
+
+                <!-- กล่อง QR Code ที่จะซ่อน/โผล่ขึ้นมาอัตโนมัติ -->
+                <div id="qrContainer" class="p-4 bg-black rounded-3 border border-warning text-center my-3 shadow-lg">
+                  <p class="text-warning fw-bold mb-2"><i class="fa-solid fa-mobile-screen-button me-1"></i> สแกนเพื่อชำระเงินผ่านแอปธนาคาร</p>
+                  <div class="p-2 d-inline-block bg-white rounded-3 shadow mb-2">
+                    <!-- แทนที่ 'qr-code.jpg' ด้วยชื่อไฟล์รูป QR โคมมีมลิงที่คุณเซฟไว้ -->
+                    <img src="qr-code.jpg" alt="QR Code ก๋วยเตี๋ยวซิ่ง" class="img-fluid rounded-3" style="max-width: 200px;">
+                  </div>
+                  <p class="text-secondary small mb-1">ชื่อบัญชี: บลก. ก๋วยเตี๋ยวซิ่งสายสปีด</p>
+                  <p class="text-success small fw-bold mb-0"><i class="fa-solid fa-circle-check me-1"></i> พร้อมเพย์ (ระบบจำลองปลอดภัย)</p>
+                </div>
+
+                <!-- ตัวเลือกเก็บเงินปลายทาง -->
+                <div class="form-check p-3 bg-dark border border-secondary rounded-3 mt-2">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" onclick="togglePayment(false)">
+                  <label class="form-check-label text-light fw-bold w-100" for="cashOnDelivery" style="cursor: pointer;">
                     <i class="fa-solid fa-money-bill-wave text-success me-2"></i> เก็บเงินปลายทาง (ตอนรับชามซิ่ง)
                   </label>
                 </div>
@@ -96,6 +109,18 @@
       <p class="mb-0">© 2026 ก๋วยเตี๋ยวซิ่ง (Guay Tiew Racing) Co., Ltd. PIM Project</p>
     </div>
   </footer>
+
+  <!-- Script สำหรับควบคุมการแสดง/ซ่อน QR Code -->
+  <script>
+    function togglePayment(showQR) {
+      const qrBox = document.getElementById('qrContainer');
+      if (showQR) {
+        qrBox.style.display = 'block'; // แสดงรูป QR
+      } else {
+        qrBox.style.display = 'none';  // ซ่อนรูป QR เมื่อเลือกเก็บเงินปลายทาง
+      }
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
