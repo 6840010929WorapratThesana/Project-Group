@@ -1,157 +1,161 @@
-:root {
-  --racing-red: #E63946;
-  --racing-orange: #FF5722;
-  --racing-yellow: #FFB703;
-  --dark-bg: #121212;
-  --card-bg: #1E1E1E;
-  --text-light: #F8F9FA;
-}
-
+/* กำหนดค่าพื้นฐานธีมมืดและฟอนต์ Kanit */
 body {
   font-family: 'Kanit', sans-serif;
-  background-color: var(--dark-bg);
-  color: var(--text-light);
+  background-color: #121212;
+  color: #f8f9fa;
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #121212;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--racing-red);
-  border-radius: 5px;
-}
-
+/* Custom Navbar */
 .navbar-custom {
-  background-color: rgba(18, 18, 18, 0.95) !important;
-  border-bottom: 3px solid var(--racing-red);
+  background-color: rgba(18, 18, 18, 0.95);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2b2b2b;
 }
 
 .navbar-brand {
-  font-weight: 800;
-  font-size: 1.6rem;
-  color: var(--racing-yellow) !important;
-  text-shadow: 2px 2px 0px var(--racing-red);
+  font-weight: 900;
+  color: #ffb703 !important;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
 .nav-link {
-  color: var(--text-light) !important;
+  color: #e0e0e0 !important;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-.nav-link:hover {
-  color: var(--racing-yellow) !important;
-  transform: translateY(-2px);
+.nav-link:hover, .nav-link.active {
+  color: #ffb703 !important;
 }
 
+/* Hero Section */
 .hero-section {
-  padding: 100px 0 60px;
-  background: linear-gradient(135deg, rgba(18,18,18,0.95) 0%, rgba(230,57,70,0.2) 100%),
-              radial-gradient(circle at 80% 20%, rgba(255,183,3,0.15) 0%, transparent 50%);
-  border-bottom: 2px solid #2A2A2A;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+  border-bottom: 1px solid #2b2b2b;
 }
 
+/* หัวข้อใหญ่กะพริบเรืองแสงนีออน (Glow Animation) */
 .hero-title {
-  font-size: 3.2rem;
   font-weight: 900;
-  line-height: 1.2;
+  font-size: 3.8rem;
+  color: #ffffff;
+  animation: neonBlink 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes neonBlink {
+  0% {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(230, 57, 70, 0.6);
+  }
+  50% {
+    color: #ffb703;
+    text-shadow: 0 0 20px rgba(255, 183, 3, 0.9), 0 0 30px rgba(230, 57, 70, 1), 0 0 40px rgba(255, 87, 34, 0.9);
+  }
+  100% {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(230, 57, 70, 0.6);
+  }
 }
 
 .hero-subtitle {
-  color: var(--racing-yellow);
-  font-size: 1.8rem;
   font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffb703;
 }
 
+/* ลูกเล่นป้ายเล็ก Pulse Glow Badge */
+.racing-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(230, 57, 70, 0.15);
+  border: 1px solid #e63946;
+  color: #ff6b6b;
+  font-weight: 700;
+  border-radius: 50rem;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  animation: badgePulse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes badgePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.4);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.8), 0 0 25px rgba(255, 183, 3, 0.5);
+    opacity: 1;
+  }
+}
+
+/* ปุ่มสไตล์เรซซิ่ง */
 .btn-racing-primary {
-  background: linear-gradient(45deg, var(--racing-red), var(--racing-orange));
-  color: white;
+  background-color: #e63946;
+  color: #ffffff;
   font-weight: 700;
   border: none;
-  border-radius: 30px;
-  padding: 10px 25px;
-  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+  border-radius: 50rem;
+  padding: 10px 24px;
   transition: all 0.3s ease;
 }
 
 .btn-racing-primary:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
-  color: white;
+  background-color: #d90429;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
 }
 
 .btn-racing-outline {
-  border: 2px solid var(--racing-yellow);
-  color: var(--racing-yellow);
+  background-color: transparent;
+  color: #ffb703;
   font-weight: 700;
-  border-radius: 30px;
-  padding: 8px 20px;
+  border: 2px solid #ffb703;
+  border-radius: 50rem;
+  padding: 8px 22px;
   transition: all 0.3s ease;
 }
 
 .btn-racing-outline:hover {
-  background-color: var(--racing-yellow);
-  color: var(--dark-bg);
+  background-color: #ffb703;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 183, 3, 0.3);
 }
 
-.racing-badge {
-  background-color: var(--racing-red);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  display: inline-block;
-  margin-bottom: 10px;
+/* Cards & Components */
+.feature-card, .menu-card, .contact-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2b2b2b;
+  border-radius: 1rem;
+  padding: 30px;
+  height: 100%;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.feature-card, .menu-card, .team-card, .contact-card {
-  background-color: var(--card-bg);
-  border-radius: 15px;
-  border: 1px solid #333;
-  transition: all 0.3s ease;
-}
-
-.feature-card {
-  padding: 30px 20px;
-}
-
-.feature-card:hover, .menu-card:hover, .team-card:hover, .contact-card:hover {
+.feature-card:hover, .menu-card:hover {
   transform: translateY(-5px);
-  border-color: var(--racing-red);
-  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.2);
+  border-color: #ffb703;
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.team-card {
-  padding: 25px;
-  text-align: center;
-}
-
-.team-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--racing-red);
-  margin-bottom: 15px;
-}
-
+/* Footer */
 footer {
-  background-color: #0A0A0A;
-  border-top: 2px solid var(--racing-red);
-  padding: 40px 0 20px;
+  background-color: #0d0d0d;
+  border-top: 1px solid #2b2b2b;
+  padding: 40px 0 20px 0;
 }
 
+/* Responsive Grid Helper สำหรับเครื่องเคียง 5 ชิ้น */
 @media (min-width: 992px) {
   .col-lg-2-4 {
     flex: 0 0 auto;
